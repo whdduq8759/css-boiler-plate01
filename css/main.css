@@ -22,6 +22,11 @@ a {
     font-family: "Exo 2", sans-serif;
 }
 
+/* 모바일이 아니면 줄개행을 안함 */
+br.mo {
+    display: none;
+}
+
 /*  header 스타일 */
 header {
     width: 100%;
@@ -93,16 +98,18 @@ header .inner-header nav.tnb li a {
     line-height: 2;
     margin-top: 33px;
 }
+
 /* 아이콘(마지막) 스타일 */
-header .inner-header nav.tnb li:last-child a{
+header .inner-header nav.tnb li:last-child a {
     display: block;
     width: 105px;
     border: 1px solid #fff;
     border-radius: 30px;
 
 }
+
 /* 아이콘(마지막) hover 스타일 */
-header .inner-header nav.tnb li:last-child a:hover{
+header .inner-header nav.tnb li:last-child a:hover {
     color: #ff8342;
     background: #fff;
 }
@@ -119,3 +126,167 @@ header .inner-header nav.tnb li:last-child a i {
     margin-left: 5px;
 }
 
+/* section main 스타일 */
+section.main {
+    background: url('../img/vis_4.jpg') no-repeat center/cover fixed;
+    height: 100vh;
+}
+
+/*  section main title 스타일 */
+section.main .main-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    animation: uprising 1s;
+}
+
+@keyframes uprising {
+    0% {
+        top: 60%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+/*  section main title h2 스타일 */
+section.main .main-title h2 {
+    font-size: 55px;
+    margin-bottom: 20px;
+
+}
+
+/* section main title p 스타일 */
+section.main .main-title p {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+/* section main title a 스타일  */
+section.main .main-title .view {
+    display: block;
+    font-size: 15px;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    width: 180px;
+    padding: 8px 0;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+section.main .main-title .view::after {
+    content: '';
+    width: 0;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.4);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+section.main .main-title .view:hover::after {
+    width: 100%;
+    transition: 0.3s;
+}
+
+
+/* section main title a hover 스타일  */
+section.main .main-title .view:hover {}
+
+/* section about 스타일 */
+section.about {
+    background: #fff;
+    padding: 80px 0;
+}
+
+section.about .title {
+    color: #000;
+    text-align: center;
+}
+
+section.about .title h2 {
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+section.about .title p {
+    font-size: 18px;
+    color: #555;
+}
+
+section.about ul {
+    width: 74%;
+    margin: 30px auto;
+    border-bottom: 1px solid #ddd;
+
+}
+
+section.about ul li {
+    float: left;
+    width: 33.3333333%;
+}
+
+section.about ul li a .img-box {
+    overflow: hidden;
+}
+
+section.about ul li a .img-box img {
+    width: 100%;
+    transition: 0.7s;
+
+}
+
+section.about ul li a:hover .img-box img {
+    transform: scale(1.2);
+}
+
+section.about ul li a .text {
+    padding: 25px;
+
+}
+
+section.about ul li a .text h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+section.about ul li a .text p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+section.about ul li a .text p.more {
+    font-weight: 700;
+    /* 일괄대문자 변환 */
+    text-transform: uppercase;
+    padding-left: 40px;
+    position: relative;
+
+}
+
+section.about ul li a .text p.more::before{
+    content: '\f30b';
+    font-family: 'Font awesome 5 Free';
+    font-size: 15px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    background: #ff8342;
+    border-radius: 50%;
+    /* 포지션이나 플로트속성을 걸면 자동으로 블록이됨 */
+    position: absolute;
+    left: 0;
+    top: -2px;
+
+}
